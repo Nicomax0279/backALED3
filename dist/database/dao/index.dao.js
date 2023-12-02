@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.professorsManager = exports.usersManager = exports.coursesManager = exports.studentsManger = void 0;
+const dbConfig_1 = require("../dbConfig");
+const courses_dao_1 = require("./courses.dao");
+const professors_dao_1 = require("./professors.dao");
+const students_dao_1 = require("./students.dao");
+const users_dao_1 = require("./users.dao");
+exports.studentsManger = new students_dao_1.StudentsManager(dbConfig_1.dbConf.sqlite, 'students');
+exports.coursesManager = new courses_dao_1.CoursesManager(dbConfig_1.dbConf.sqlite, 'courses');
+exports.usersManager = new users_dao_1.UsersManager(dbConfig_1.dbConf.sqlite, 'users');
+exports.professorsManager = new professors_dao_1.ProfessorsManager(dbConfig_1.dbConf.sqlite, 'professors');
